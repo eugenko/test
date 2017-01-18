@@ -1,0 +1,23 @@
+<div ng-controller='getPublic' class="row">
+
+
+<div class="col-lg-offset-2 col-lg-8 single_pub">
+<div class="single_pub" ng-repeat="results in result">
+
+<table border="0">
+
+<tr>
+<td>
+<img src="../uploads/{{result[0].image}}" width="120" height="120" class='circle'/>
+</td>
+<td>
+<span><h3>{{results.title}}</h3></span>
+<p><span class="">{{results.date}}</span></p>
+</td>
+</tr>
+</table>
+<span contenteditable="false" data-directive ng-model="result[0].text"></span>
+
+</div>
+</div>
+</div>

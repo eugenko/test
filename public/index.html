@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+<script type="text/javascript" src="javascripts/lib/jquery-1.9.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="stylesheets/bootstrap/css/bootstrap.min.css">
+<script src="stylesheets/bootstrap/js/bootstrap.min.js"></script>
+<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+<script src="javascripts/lib/angular.min.js"></script>
+<script src="javascripts/lib/angular-route.min.js"></script>
+<script src="javascripts/lib/angular-contenteditable/angular-contenteditable.js"></script>
+<script src="javascripts/app.js"></script>
+<script src="javascripts/controllers.js"></script>
+<script src="javascripts/directives.js"></script>
+
+
+</head>
+<body >
+<header class="row">
+	
+		<div class="col-lg-offset-1 col-lg-1  col-md-offset-1 col-md-1  col-sm-offset-1 col-sm-1  col-xs-offset-4 col-xs-3 off">
+			<a href="#/" ><img src="images/photo.jpg"></a>
+		</div>
+	
+		<div class='col-lg-offset-7 col-lg-2  col-md-offset-7 col-md-2  col-sm-offset-6 col-sm-2  col-xs-offset-3 col-xs-3 reg'>
+			<div class="hidden-xs icon"> 
+				<a href="https://vk.com/public134783238"  target="_blank"><img src="images/vk.png" class="img"></a>
+				<a href="https://www.facebook.com/groups/996982627077927/?multi_permalinks=1069228943186628%2C1068394976603358%2C1068338209942368&notif_t=group_activity&notif_id=1483014146490806" target="_blank" ><img src="images/facebook.png" class="img"></a>
+			</div>
+			<a href="https://www.onelife.eu/signup/wizard007" class="btn btn-danger but" target="_blank">Зарегистрироватся бесплатно</a>
+		</div>
+	
+</header>
+<div id="menu_main" class="row  hidden-xs">
+<div class='col-lg-8 col-lg-offset-2   col-md-8  col-md-offset-2  col-sm-8 col-sm-offset-2 items_menu'  ng-controller="MainControll" >
+<ul>
+<li ng-repeat="items in menu">&nbsp;&nbsp; | &nbsp;&nbsp;<a href='#/page/{{items.page}}'>{{items.value}}</a></li>
+</ul>
+</div>
+</div>
+
+<div class="visible-xs" ng-controller="MainControll">
+	  
+<div class="dropdown">
+ <button class="btn btn-info dropdown-toggle button" type="button" data-toggle="dropdown"><span class="glyphicon glyphicon-menu-hamburger">&nbsp;Меню</span>
+</button>
+<ul class="dropdown-menu">
+<li ng-repeat="items in menu"><a href='#/page/{{items.page}}'>{{items.value}}</a></li>
+</ul>
+</div>
+
+
+  
+</div>
+
+
+<section>
+	<div ng-view class='all_pub row'></div>
+
+<!--<a href="#/" ><img src="images/photo.jpg" width="20px" height="20px"></a>-->
+</section>
+
+
+<footer class="row">
+	<div class ="col-lg-1 col-lg-offset-1   col-md-1 col-md-offset-1 col-sm-1 col-sm-offset-1 col-xs-offset-4 col-xs-3">
+		<a href="#/" ><img src="images/photo.jpg" width="140px" height="140px" class="img_footer"></a><br>
+	</div>
+	<div class="contacts col-lg-2 col-lg-offset-2  col-md-2 col-md-offset-2 col-sm-3 col-sm-offset-2 col-xs-offset-2 col-xs-7">
+		<p class='contact'><h4>Контакты</h4></p>
+		<p><img src="images/skype.png" width="20" height="20">avizard1</p>
+		<p>&nbsp;<img src="images/email.png" width="15" height="15">&nbsp;compozit.zp@gmail.com</p>
+		<p>&nbsp;<img src="images/viber1.png" width="15" height="15">&nbsp;+380963656716</p>
+		<p>&nbsp;<img src="images/phone.png" width="15" height="15">&nbsp;+38 096 365-67-16<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;+38 099 417-67-42</p>
+
+	</div>
+<div class='col-lg-offset-3 col-lg-2   col-md-offset-3 col-md-2  col-sm-2 col-sm-offset-1  col-xs-offset-3 col-xs-3 reg'>
+<a href="https://www.onelife.eu/signup/wizard007" class="btn btn-danger but" target="_blank">Зарегистрироватся бесплатно</a>
+</footer>
+
+</body>
+
+
+
+
+
+</html>

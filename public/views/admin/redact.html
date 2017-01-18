@@ -1,0 +1,56 @@
+<div ng-controller="sessionController"><a href="javascript://" ng-click="del_sess();">Выйти</a></div>
+
+<span class='text-danger'><h3>Редактирование содержимого  страници</h3></span>
+<hr>
+
+
+ <div ng-controller="pubController">
+ 
+ <h4><p class="text-info"><b>Редактирование статьи</b></p></h4>
+<a href="#/{{data.name_page}}">Назад</a><br>
+ 
+ <div class="{{result.style}}  mess"><center><span class="{{result.image}}">{{result.text}}</span></center></div><br>
+ <form name='form'>
+ <p class="text-info">Заголовок статьи</p>
+	<input type="text" name='title' class="form-control" value="{{data.title}}" ng-model="data.title" placeholder="Введите заголовок статьи." required/><br>
+	<span style="color:red" ng-show="form.title.$touched && form.title.$error.required">Необходимо ввести заголовок статьи</span>
+	<!--<img src="../../uploads/{{data.image}}"  width='100' height='100'><br>-->
+	
+	<!-- <form  name="up.upload_form">-->
+        <p class="text-info">Выберите изображения для статьи</p>        
+			    <img style="width:100px;" ng-show="!!file" ngf-thumbnail="file || '/thumb.jpg'"/>
+            <i ng-show="up.upload_form.file.$error.required">*required</i><br>
+            <i ng-show="up.upload_form.file.$error.maxSize">File too large 
+            {{up.file.size / 1000000|number:1}}MB: max 20M</i>
+			   
+            <input 
+                type="file" 
+                ngf-select 
+                ng-model="file" 
+                name="file" 
+                ngf-pattern="'image/*'"
+                accept="image/*" 
+                ngf-max-size="2MB" 
+                />
+           
+           <!--  Multiple files
+            <div class="button" ngf-select ng-model="up.files" ngf-multiple="true">Select</div>
+            Drop files: <div ngf-drop ng-model="up.files" class="drop-box">Drop</div> -->
+          <!--  <button type="submit" ng-click="up.submit()">submit</button>-->
+            <p class='text-success'>{{progress}}</p>
+      <!--  </form>-->
+	 <p class="text-info">Анонс статьи</p>
+	<textarea name='preview' ui-tinymce="tinymceOptions" ng-model="data.preview" required></textarea><!--как пример потом исправить тут и в контроллере-->
+	<span style="color:red" ng-show="form.preview.$touched && form.preview.$error.required">Необходимо ввести анонс статьи</span>
+    <br>
+	 <p class="text-info">Текст статьи</p>
+    <textarea name="text" ui-tinymce="tinymceOptions" ng-model="data.text" rows="15" required></textarea><!--как пример потом исправить тут и в контроллере-->
+	<span style="color:red" ng-show="form.text.$touched && form.text.$error.required">Необходимо ввести текст статьи</span>
+    <br>
+	<input type="button" ng-click="save('content');" value="СОХРАНИТЬ" class="btn btn-info" ng-disabled="form.$invalid">
+	<a href="#/welcome_page" class="btn btn-danger">ОТМЕНИТЬ</a><br>
+
+	</form>
+	
+ </div>
+    

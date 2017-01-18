@@ -1,0 +1,10 @@
+<div ng-controller="sessionController"></div>
+
+<div class='col-lg-6 col-lg-offset-3'>
+<form  method="post" ng-controller="authController" name="form" novalidate>
+<input type='text' class="form-control" ng-model="user.email" placeholder='Enter your email' required><br>
+<input type='password'  class="form-control" ng-model="user.password" placeholder='Enter your password' required><hr>
+<center><input type='button' class="btn btn-success" value='LOGIN' ng-click="login();" ng-disabled="form.$invalid"></center>
+<span class="text-danger">{{error}}</span>
+</form>
+<div>

@@ -1,0 +1,29 @@
+
+
+<div ng-controller='getContent' class="row">
+<div ng-repeat="publicate in result" class="col-lg-offset-2 col-lg-8 single_pub">
+<table border="0">
+
+<tr>
+<td>
+<img src="../uploads/{{publicate.image}}" width="120" height="120" class='circle'/>
+</td>
+<td>
+<span><a href='#/public/{{publicate.id}}'><h3>{{publicate.title}}</h3></a></span>
+<p><span class="">{{publicate.date}}</span></p>
+</td>
+</tr>
+
+<tr>
+<td colspan="2">
+
+<p contenteditable="false" data-directive ng-model="publicate.preview"></p>
+</td>
+</tr>
+
+</table>
+<!--<p>{{publicate.text}}</p>-->
+
+<hr>
+</div>
+ </div>

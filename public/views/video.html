@@ -1,0 +1,16 @@
+
+
+<div ng-controller="videoController"  class="col-lg-offset-2 col-lg-8 single_pub">
+<h2>Видео</h2>
+<div ng-repeat="one in data">
+<div class='video  hidden-xs' >
+<iframe ng-src="{{one.video}}"  frameborder="0" allowfullscreen ></iframe>
+<center><span contenteditable="false" ><b>{{one.name}}</b></span></center>
+</div>
+<div class='video_min  visible-xs' >
+<iframe ng-src="{{one.video}}"  frameborder="0" allowfullscreen ></iframe>
+<center><span contenteditable="false" ><b>{{one.name}}</b></span></center>
+</div>
+</div>
+</div>
+

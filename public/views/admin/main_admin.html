@@ -1,0 +1,16 @@
+<div ng-controller="sessionController">
+<a href="javascript://" ng-click="del_sess();">Выйти</a>
+</div>
+<hr>
+<div ng-controller='adminControll'>
+
+<div ng-repeat="item in one">
+<h4><a href='#/{{item.page}}'>{{item.value}}</a>
+	<div class='icons'>
+		<!--<a href='#/{{item.page}}'><span class="glyphicon glyphicon-edit"></span></a>-->
+		<a href="javascript://" ng-click="del_one(item);"><span class="glyphicon glyphicon-trash"></span></a></h4>
+	</div>
+</div>
+<hr>
+		<a href="#/add_page" class="btn btn-info"><span class="glyphicon glyphicon-plus">&nbsp;<b>Добавить сраницу</b></span></a>
+</div>

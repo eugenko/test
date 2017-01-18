@@ -1,0 +1,26 @@
+<div ng-controller="sessionController"><a href="javascript://" ng-click="del_sess();">Выйти</a></div>
+<hr>
+<h4><p class="text-info"><b>Добавить страницу</b></p></h4>
+<a href="#/welcome_page">Назад</a><br>
+
+<form name="new_form" ng-controller="addPageController" novalidate>
+
+<div class="col-lg-6  col-lg-offset-2">
+<div class="{{result.style}}  mess"><center><span class="{{result.image}}" >{{result.text}}</span></center></div><br>
+<input type="text" name='db' class="form-control" ng-model="page.name" placeholder="Введите латиницей краткое название страницы" ng-pattern="/^[a-zA-Z\.]{1,20}$/" required/>
+
+<div class='field'>
+<span style="color:red" ng-show="new_form.db.$touched && new_form.db.$error.required">Необходимо ввести краткое название!</span><!-- Запомнить эту штуку -->
+<span style="color:red" ng-show="new_form.db.$touched && !new_form.db.$error.required && new_form.db.$invalid">Не корректно введено краткое имя!</span><br>
+</div>
+
+<input type="text" name="full_name" class="form-control"ng-model="page.value" placeholder="Введите полное название страницы" ng-pattern="/^[а-яА-Яa-zA-Z\.]{1,20}$/" required/>
+
+<div class='field'>
+<span style="color:red" ng-show="new_form.full_name.$touched && new_form.full_name.$error.required">Необходимо ввести название страницы!</span>
+<span style="color:red" ng-show="new_form.full_name.$touched && !new_form.full_name.$error.required && new_form.full_name.$invalid">Не корректное название для страницы!</span><br>
+</div>
+
+<center><button class="btn btn-info" ng-click="new_page();" ng-disabled="new_form.$invalid">Сохранить</button></center>
+</form>
+</div>
